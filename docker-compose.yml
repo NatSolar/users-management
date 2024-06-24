@@ -1,0 +1,15 @@
+services:
+  users-management:
+    container_name: users-management-container
+    build: .
+    image: users-management:v1
+    ports:
+      - 80:80
+    expose:
+      - 80
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge

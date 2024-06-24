@@ -1,0 +1,37 @@
+<h3>Nuevo usuario</h3>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+            <div class="row">
+                <div class="form-group col-6 mb-3">
+                    <label class="form-label" for="firstName">Nombre</label>
+                    <input class="form-control" type="text" id="firstName" name="firstName" ngModel required>
+                </div>
+                <div class="form-group col-6 mb-3">
+                    <label class="form-label" for="lastName">Apellido</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="lastName" name="lastName" ngModel>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6 mb-3">
+                    <label class="form-label" for="occupation">Ocupación</label>
+                    <input class="form-control" id="occupation" name="occupation" type="text" ngModel required>
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label" for="age">Edad</label>
+                    <input class="form-control" type="text" id="age" name="age" ngModel required>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-secondary me-1" (click)="goBack()">Regresar</a>
+                <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Registrar</button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
